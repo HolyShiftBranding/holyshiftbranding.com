@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holy Shift Branding - Bold Brand Reinvigoration</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #2b2628;
+            overflow-x: hidden;
+            background: white;
+        }
+
+        /* Brand Colors */
+        :root {
+            --lavender: #C9C7D2;
+            --obsidian: #2b2628;
+            --cream: #F7F6F6;
+            --lime: #9FC967;
+            --cherry: #C9879A;
+        }
+
+        /* Animated Background Elements */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .zigzag {
+            position: absolute;
+            width: 200px;
+            height: 4px;
+            background: repeating-linear-gradient(
+                90deg,
+                var(--lime) 0px,
+                var(--lime) 20px,
+                transparent 20px,
+                transparent 40px
+            );
+            animation: zigzagMove 8s linear infinite;
+        }
+
+        .zigzag:nth-child(1) {
+            top: 10%;
+            left: -200px;
+            transform: rotate(15deg);
+            animation-delay: 0s;
+        }
+
+        .zigzag:nth-child(2) {
+            top: 30%;
+            right: -200px;
+            transform: rotate(-15deg);
+            animation-delay: -2s;
+            background: repeating-linear-gradient(
+                90deg,
+                var(--cherry) 0px,
+                var(--cherry) 20px,
+                transparent 20px,
+                transparent 40px
+            );
+        }
+
+        .zigzag:nth-child(3) {
+            top: 50%;
+            left: -200px;
+            transform: rotate(25deg);
+            animation-delay: -4s;
+            background: repeating-linear-gradient(
+                90deg,
+                var(--lavender) 0px,
+                var(--lavender) 20px,
+                transparent 20px,
+                transparent 40px
+            );
+        }
+
+        .zigzag:nth-child(4) {
+            top: 70%;
+            right: -200px;
+            transform: rotate(-25deg);
+            animation-delay: -6s;
+        }
+
+        .double-line {
+            position: absolute;
+            width: 300px;
+            height: 8px;
+            background: linear-gradient(
+                90deg,
+                var(--cherry) 0%,
+                var(--cherry) 45%,
+                transparent 45%,
+                transparent 55%,
+                var(--cherry) 55%,
+                var(--cherry) 100%
+            );
+            animation: doubleLineMove 12s linear infinite;
+        }
+
+        .double-line:nth-child(5) {
+            top: 20%;
+            left: -300px;
+            transform: rotate(-10deg);
+            animation-delay: 0s;
+        }
+
+        .double-line:nth-child(6) {
+            top: 60%;
+            right: -300px;
+            transform: rotate(10deg);
+            animation-delay: -6s;
+            background: linear-gradient(
+                90deg,
+                var(--lime) 0%,
+                var(--lime) 45%,
+                transparent 45%,
+                transparent 55%,
+                var(--lime) 55%,
+                var(--lime) 100%
+            );
+        }
+
+        .swirl {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: 4px solid var(--lavender);
+            border-radius: 50%;
+            border-top-color: var(--cherry);
+            border-right-color: var(--lime);
+            animation: swirlRotate 6s linear infinite, swirlMove 15s ease-in-out infinite;
+        }
+
+        .swirl:nth-child(7) {
+            top: 15%;
+            left: 20%;
+            animation-delay: 0s;
+        }
+
+        .swirl:nth-child(8) {
+            top: 80%;
+            right: 10%;
+            animation-delay: -5s;
+            width: 60px;
+            height: 60px;
+        }
+
+        @keyframes zigzagMove {
+            0% { transform: translateX(0) rotate(15deg); }
+            100% { transform: translateX(calc(100vw + 200px)) rotate(15deg); }
+        }
+
+        @keyframes doubleLineMove {
+            0% { transform: translateX(0) rotate(-10deg); }
+            100% { transform: translateX(calc(100vw + 300px)) rotate(-10deg); }
+        }
+
+        @keyframes swirlRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes swirlMove {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-30px); }
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--obsidian);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, var(--lavender) 0%, transparent 30%),
+                radial-gradient(circle at 80% 20%, var(--cherry) 0%, transparent 30%),
+                radial-gradient(circle at 40% 40%, var(--lime) 0%, transparent 30%);
+            opacity: 0.1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            animation: slideInUp 1s ease-out;
+            letter-spacing: -3px;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        .hero h1 .holy {
+            color: var(--obsidian);
+            position: relative;
+        }
+
+        .hero h1 .holy::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: var(--lime);
+            transform: skew(-15deg);
+        }
+
+        .hero h1 .shift {
+            color: var(--obsidian);
+            display: block;
+            font-size: 6rem;
+            margin-top: -20px;
+            position: relative;
+        }
+
+        .hero h1 .shift::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -20px;
+            right: -20px;
+            height: 8px;
+            background: var(--cherry);
+            transform: translateY(-50%) skew(15deg);
+            z-index: -1;
+        }
+
+        .hero .tagline {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            animation: slideInUp 1s ease-out 0.2s both;
+            color: var(--obsidian);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+        }
+
+        .hero .tagline::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--lavender);
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            animation: slideInUp 1s ease-out 0.4s both;
+            font-style: italic;
+            color: var(--obsidian);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 20px 50px;
+            background: var(--lime);
+            color: var(--obsidian);
+            text-decoration: none;
+            border-radius: 0;
+            font-weight: 900;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            animation: slideInUp 1s ease-out 0.6s both;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            overflow: hidden;
+            border: 3px solid var(--cherry);
+            box-shadow: 8px 8px 0px var(--lavender);
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--cherry);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .cta-button:hover::before {
+            left: 0;
+        }
+
+        .cta-button:hover {
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 12px 12px 0px var(--lavender);
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: white;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: all 0.3s ease;
+            border-bottom: 4px solid var(--lime);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav.scrolled {
+            box-shadow: 0 10px 30px rgba(43, 38, 40, 0.1);
+            border-bottom-color: var(--cherry);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--obsidian);
+            letter-spacing: -2px;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        .logo .shift {
+            color: var(--cherry);
+            position: relative;
+        }
+
+        .logo .shift::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--lime);
+            transform: skew(-15deg);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--obsidian);
+            font-weight: 700;
+            transition: all 0.3s ease;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0;
+            height: 4px;
+            background: var(--cherry);
+            transition: width 0.3s ease;
+            transform: skew(-15deg);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--cherry);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 120px 20px;
+            background: var(--lime);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            background: var(--cherry);
+            clip-path: polygon(100% 0%, 0% 100%, 100% 100%);
+        }
+
+        .services::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 150px;
+            height: 150px;
+            background: white;
+            clip-path: polygon(0% 0%, 0% 100%, 100% 100%);
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: left;
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 2rem;
+            color: var(--obsidian);
+            letter-spacing: -3px;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100px;
+            height: 6px;
+            background: white;
+            transform: skew(-15deg);
+        }
+
+        .section-subtitle {
+            text-align: left;
+            font-size: 1.3rem;
+            color: var(--obsidian);
+            margin-bottom: 4rem;
+            font-weight: 500;
+            max-width: 700px;
+            line-height: 1.6;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 45px 35px;
+            position: relative;
+            transition: all 0.4s ease;
+            border: 3px solid var(--obsidian);
+        }
+
+        .service-card:nth-child(odd) {
+            border-left: 8px solid var(--cherry);
+            transform: translateX(20px);
+        }
+
+        .service-card:nth-child(even) {
+            border-right: 8px solid var(--lavender);
+            transform: translateX(-20px);
+        }
+
+        .service-card:nth-child(3n) {
+            border-top: 8px solid var(--lime);
+            transform: translateY(-10px);
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 
+                12px 12px 0px var(--lavender),
+                24px 24px 0px var(--cherry);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--obsidian);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            font-size: 32px;
+            color: white;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 100%, 0% 100%);
+        }
+
+        .service-card h3 {
+            font-size: 1.6rem;
+            font-weight: 900;
+            margin-bottom: 18px;
+            color: var(--obsidian);
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 120px 20px;
+            background: var(--cherry);
+            color: var(--obsidian);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.3;
+        }
+
+        .about::after {
+            content: '';
+            position: absolute;
+            bottom: -150px;
+            left: -150px;
+            width: 400px;
+            height: 400px;
+            background: var(--lime);
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            opacity: 0.2;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+        }
+
+        .about-text h2 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 35px;
+            color: var(--obsidian);
+            letter-spacing: -2px;
+            text-transform: uppercase;
+        }
+
+        .about-text p {
+            font-size: 1.2rem;
+            color: var(--obsidian);
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        .about-text .highlight {
+            background: var(--lime);
+            color: var(--obsidian);
+            padding: 2px 8px;
+            font-weight: 700;
+            transform: skew(-5deg);
+            display: inline-block;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 35px;
+            margin-top: 50px;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 40px 20px;
+            background: white;
+            border: 4px solid var(--obsidian);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .stat::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            right: -8px;
+            bottom: -8px;
+            background: var(--lime);
+            z-index: -1;
+            transition: all 0.3s ease;
+        }
+
+        .stat:hover::before {
+            top: -12px;
+            left: -12px;
+            right: -12px;
+            bottom: -12px;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--obsidian);
+            display: block;
+            text-transform: uppercase;
+        }
+
+        .stat-label {
+            color: var(--obsidian);
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 120px 20px;
+            background: white;
+            color: var(--obsidian);
+            text-align: center;
+            position: relative;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: repeating-linear-gradient(
+                90deg,
+                var(--lime) 0%,
+                var(--lime) 25%,
+                var(--cherry) 25%,
+                var(--cherry) 50%,
+                var(--lavender) 50%,
+                var(--lavender) 75%,
+                var(--obsidian) 75%
+            );
+        }
+
+        .contact h2 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 35px;
+            color: var(--obsidian);
+            letter-spacing: -2px;
+            text-transform: uppercase;
+        }
+
+        .contact p {
+            font-size: 1.3rem;
+            margin-bottom: 50px;
+            color: var(--obsidian);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-form {
+            max-width: 700px;
+            margin: 0 auto;
+            display: grid;
+            gap: 25px;
+        }
+
+        .form-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 25px;
+            border: 3px solid var(--obsidian);
+            background: white;
+            color: var(--obsidian);
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--cherry);
+            box-shadow: 8px 8px 0px var(--lavender);
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: #999;
+            font-weight: 500;
+        }
+
+        .contact-form textarea {
+            grid-column: 1 / -1;
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        .submit-btn {
+            padding: 25px 60px;
+            background: var(--cherry);
+            color: white;
+            border: 3px solid var(--obsidian);
+            font-weight: 900;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            justify-self: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 8px 8px 0px var(--lime);
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--lime);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .submit-btn:hover::before {
+            left: 0;
+        }
+
+        .submit-btn:hover {
+            color: var(--obsidian);
+            transform: translateY(-3px);
+            box-shadow: 12px 12px 0px var(--lime);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--lavender);
+            color: var(--obsidian);
+            padding: 60px 20px 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 25px;
+            color: var(--obsidian);
+            text-transform: uppercase;
+        }
+
+        .footer-logo .shift {
+            color: var(--cherry);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero h1 .shift {
+                font-size: 4rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-card:nth-child(odd),
+            .service-card:nth-child(even),
+            .service-card:nth-child(3n) {
+                transform: none;
+            }
+
+            .form-group {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+                text-align: center;
+            }
+
+            .section-subtitle {
+                text-align: center;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .zigzag, .double-line {
+                display: none;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background Elements -->
+    <div class="animated-bg">
+        <div class="zigzag"></div>
+        <div class="zigzag"></div>
+        <div class="zigzag"></div>
+        <div class="zigzag"></div>
+        <div class="double-line"></div>
+        <div class="double-line"></div>
+        <div class="swirl"></div>
+        <div class="swirl"></div>
+    </div>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">Holy <span class="shift">Shift</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1><span class="holy">Holy</span> <span class="shift">Shift</span></h1>
+            <p class="tagline">Branding</p>
+            <p class="subtitle">"We don't just rebrand—we reinvigorate souls and shift paradigms."</p>
+            <a href="#contact" class="cta-button">Make The Shift</a>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Services That Shift Everything</h2>
+            <p class="section-subtitle">We're tech-savvy, AI-obsessed, and creatively unhinged. Ready to think outside the box and get a little taboo? Let's get your brand working on what actually matters.</p>
+            
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">✨</div>
+                    <h3>Complete Brand Reinvigoration</h3>
+                    <p>We don't just refresh—we resurrect. Complete brand identity overhauls that make your competition question their life choices.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">🚀</div>
+                    <h3>Sassy Strategic Marketing</h3>
+                    <p>Bold, data-driven campaigns that cut through the noise. We're not here to play it safe—we're here to make waves and drive results.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">🤖</div>
+                    <h3>AI Optimization & Automation</h3>
+                    <p>Harness the power of AI to work smarter, not harder. We'll automate the mundane so you can focus on being brilliant.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">📊</div>
+                    <h3>Data Analytics That Actually Matter</h3>
+                    <p>No fluff, no vanity metrics. Just the insights that move the needle and make bank. Because pretty charts don't pay bills.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">📈</div>
+                    <h3>Dashboard & Report Building</h3>
+                    <p>Custom dashboards that make decision-making a piece of cake. Real-time insights for leaders who don't have time for guesswork.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">🎯</div>
+                    <h3>Marketing Insights & Strategy</h3>
+                    <p>We dig deep, ask the hard questions, and deliver strategies that actually work. No cookie-cutter solutions here.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">💡</div>
+                    <h3>Customer Psychology & Insights</h3>
+                    <p>Get inside your customers' heads (legally). Behavioral analysis that turns browsers into buyers and buyers into evangelists.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">💰</div>
+                    <h3>Lifetime Value Optimization</h3>
+                    <p>Turn one-time buyers into lifetime lovers. Predictive analytics and retention strategies that maximize every relationship.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">🌟</div>
+                    <h3>Customer Success Programs</h3>
+                    <p>Proactive success strategies that prevent churn and create champions. Because losing customers is so last season.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">❤️</div>
+                    <h3>Customer Experience Design</h3>
+                    <p>Every touchpoint perfected. We design experiences so smooth, your customers will think you read their minds.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">⚡</div>
+                    <h3>MCP & Tech Integration</h3>
+                    <p>Model Context Protocol setup and advanced tech integrations. We speak fluent AI and make technology your competitive advantage.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <h2>We're Not Your Average Agency</h2>
+                    <p>We're <span class="highlight">bold, godly women</span> with a passion for brand reinvigoration and zero tolerance for mediocrity. We think outside the box, embrace the taboo, and use <span class="highlight">efficiency-first methods</span> to get your business working on what actually matters.</p>
+                    <p>Our approach? <span class="highlight">Technology-centric, AI-obsessed, and creatively unhinged.</span> We don't just follow trends—we set them. We don't just solve problems—we shift paradigms.</p>
+                    <p>Ready to work with an agency that's as committed to your success as you are? Let's make some holy shifts happen.</p>
+                </div>
+                <div class="stats fade-in">
+                    <div class="stat">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Brands Shifted</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">99%</div>
+                        <div class="stat-label">ROI Improvement</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Hustle Mode</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">∞</div>
+                        <div class="stat-label">Creative Solutions</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Ready to Make the Shift?</h2>
+            <p>Stop settling for ordinary. Let's create something extraordinary together.</p>
+            <form class="contact-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                </div>
+                <input type="text" placeholder="Company Name">
+                <textarea placeholder="Tell us about your brand—what needs shifting?" required></textarea>
+                <button type="submit" class="submit-btn">Let's Make Magic</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Holy <span class="shift">Shift</span> Branding</div>
+            <p>&copy; 2025 Holy Shift Branding. All rights reserved. | Shifting paradigms, one brand at a time.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation and scroll effects
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Fade in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Form submission
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('.submit-btn');
+            const originalText = btn.textContent;
+            
+            btn.textContent = 'Shifting Paradigms...';
+            
+            setTimeout(() => {
+                btn.textContent = 'Holy Shift! Message Sent!';
+                
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    this.reset();
+                }, 3000);
+            }, 2000);
+        });
+
+        // Add more animated elements periodically
+        function addRandomZigzag() {
+            const zigzag = document.createElement('div');
+            zigzag.className = 'zigzag';
+            zigzag.style.top = Math.random() * 100 + '%';
+            zigzag.style.left = '-200px';
+            zigzag.style.transform = `rotate(${Math.random() * 30 - 15}deg)`;
+            zigzag.style.background = `repeating-linear-gradient(90deg, var(--${['lime', 'cherry', 'lavender'][Math.floor(Math.random() * 3)]}) 0px, var(--${['lime', 'cherry', 'lavender'][Math.floor(Math.random() * 3)]}) 20px, transparent 20px, transparent 40px)`;
+            
+            document.querySelector('.animated-bg').appendChild(zigzag);
+            
+            setTimeout(() => {
+                zigzag.remove();
+            }, 8000);
+        }
+
+        // Add new elements every 5 seconds
+        setInterval(addRandomZigzag, 5000);
+    </script>
+</body>
+</html>
