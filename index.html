@@ -394,6 +394,21 @@
             transform: skew(-15deg);
         }
 
+        /* Logo Images */
+        .logo-img {
+            height: 50px;
+            width: auto;
+            display: block;
+        }
+
+        .hero-logo {
+            max-width: 600px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 1rem;
+            animation: slideInUp 1s ease-out;
+        }
+
         .nav-links {
             display: flex;
             list-style: none;
@@ -846,6 +861,14 @@
                 font-size: 4rem;
             }
 
+            .hero-logo {
+                max-width: 80%;
+            }
+
+            .logo-img {
+                height: 40px;
+            }
+
             .nav-links {
                 display: none;
             }
@@ -915,7 +938,7 @@
 
     <nav id="navbar">
         <div class="nav-container">
-            <div class="logo">Holy <span class="shift">Shift</span></div>
+            <img src="src/HolyShfit_wht.png" alt="Holy Shift Branding" class="logo-img">
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
@@ -927,7 +950,7 @@
 
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1><span class="holy">Holy</span> <span class="shift">Shift</span></h1>
+            <img src="src/HolyShift_wht.png" alt="Holy Shift Branding" class="hero-logo">
             <p class="tagline">Branding</p>
             <p class="subtitle">"We don't just rebrand—we reinvigorate souls and shift paradigms."</p>
             <a href="#contact" class="cta-button">Make The Shift</a>
